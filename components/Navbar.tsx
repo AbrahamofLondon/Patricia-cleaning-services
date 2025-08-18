@@ -5,7 +5,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // shrink / shadow on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -23,30 +22,16 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-        {/* Brand */}
         <Link href="#home" className="font-extrabold text-lg md:text-xl">
           Patricia
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-2">
-          <Link href="#services" className={navItem}>
-            Services
-          </Link>
-          <Link href="#pricing" className={navItem}>
-            Pricing
-          </Link>
-          <Link href="#availability" className={navItem}>
-            Availability
-          </Link>
-          <Link href="#contact" className={navItem}>
-            Contact
-          </Link>
-          <Link href="/about" className={navItem}>
-            About
-          </Link>
-
-          {/* CTA */}
+          <Link href="#services" className={navItem}>Services</Link>
+          <Link href="#pricing" className={navItem}>Pricing</Link>
+          <Link href="#availability" className={navItem}>Availability</Link>
+          <Link href="#contact" className={navItem}>Contact</Link>
+          <Link href="/about" className={navItem}>About</Link>
           <Link
             href="#book"
             className="ml-2 inline-flex items-center rounded-lg bg-mint-600 text-white px-4 py-2 hover:bg-mint-700"
@@ -55,7 +40,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile burger */}
         <button
           aria-label="Toggle menu"
           className="md:hidden inline-flex items-center justify-center rounded p-2 hover:bg-gray-100"
@@ -72,25 +56,14 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile drawer */}
       {open && (
         <div className="md:hidden border-t bg-white">
           <div className="max-w-6xl mx-auto px-4 py-2">
-            <Link href="#services" className={navItem} onClick={() => setOpen(false)}>
-              Services
-            </Link>
-            <Link href="#pricing" className={navItem} onClick={() => setOpen(false)}>
-              Pricing
-            </Link>
-            <Link href="#availability" className={navItem} onClick={() => setOpen(false)}>
-              Availability
-            </Link>
-            <Link href="#contact" className={navItem} onClick={() => setOpen(false)}>
-              Contact
-            </Link>
-            <Link href="/about" className={navItem} onClick={() => setOpen(false)}>
-              About
-            </Link>
+            <Link href="#services" className={navItem} onClick={() => setOpen(false)}>Services</Link>
+            <Link href="#pricing" className={navItem} onClick={() => setOpen(false)}>Pricing</Link>
+            <Link href="#availability" className={navItem} onClick={() => setOpen(false)}>Availability</Link>
+            <Link href="#contact" className={navItem} onClick={() => setOpen(false)}>Contact</Link>
+            <Link href="/about" className={navItem} onClick={() => setOpen(false)}>About</Link>
             <Link
               href="#book"
               onClick={() => setOpen(false)}

@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <div id="home">
+      <Navbar />
+
       {/* Hero Section */}
       <section className="bg-blue-50 py-16 text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to Patricia’s Cleaning Services</h1>
