@@ -1,6 +1,7 @@
+// pages/about.tsx
 export default function About() {
   return (
-    <div>
+    <div className="max-w-3xl mx-auto px-6 py-16">
       <h2 className="text-2xl font-bold mb-4">About Patricia</h2>
       <p className="mb-4">
         With over 5 years of professional housekeeping experience, Patricia has built a reputation

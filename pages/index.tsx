@@ -1,22 +1,27 @@
+// pages/index.tsx
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
   return (
-    <div>
+    <div id="home">
       {/* Hero Section */}
       <section className="bg-blue-50 py-16 text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to Patricia’s Cleaning Services</h1>
         <p className="text-lg mb-6 max-w-2xl mx-auto">
-          Reliable, professional, and trustworthy housekeeping. Whether you need a one-time deep clean or regular upkeep, Patricia delivers with care and attention to detail.
+          Reliable, professional, and trustworthy housekeeping. Whether you need a one-time deep clean
+          or regular upkeep, Patricia delivers with care and attention to detail.
         </p>
-        <a
+        <Link
           href="/booking"
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
         >
           Book Now
-        </a>
+        </Link>
       </section>
 
-      {/* Services Section */}
-      <section className="py-12 bg-white text-center">
+      {/* Services */}
+      <section id="services" className="py-12 bg-white text-center">
         <h2 className="text-2xl font-bold mb-8">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <div className="p-6 border rounded-lg shadow hover:shadow-lg">
@@ -35,7 +40,7 @@ export default function Home() {
       </section>
 
       {/* Booking Info */}
-      <section className="py-12 bg-gray-50 text-center">
+      <section id="pricing" className="py-12 bg-gray-50 text-center">
         <h2 className="text-2xl font-bold mb-4">Minimum Booking</h2>
         <p>4 hours at a fixed hourly rate.</p>
       </section>
