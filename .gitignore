@@ -1,7 +1,15 @@
-node_modules/
-.next/
-.vercel/
-.env*
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# build output
+/.next
+/out
+
+# misc
 .DS_Store
+.env.local
 npm-debug.log*
+yarn-debug.log*
 yarn-error.log*
