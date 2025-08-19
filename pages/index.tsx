@@ -4,9 +4,10 @@ import Navbar from "@/components/Navbar";
 const CAL = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED || "";
 const RATE = process.env.NEXT_PUBLIC_RATE || "15";
 
-// 👇 define Patricia's email + phone here (cleaner, easier to update later)
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "patricia.housekeeping@example.com";
-const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE || "07377 339910";
+// Configurable contact (display vs. tel-safe)
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "abepokmogpa1@gmail.com";
+const CONTACT_PHONE_DISPLAY = process.env.NEXT_PUBLIC_CONTACT_PHONE || "07377 339910";
+const CONTACT_PHONE_TEL = (CONTACT_PHONE_DISPLAY || "").replace(/\s+/g, ""); // strip spaces for tel:
 
 export default function Home() {
   return (
@@ -23,13 +24,13 @@ export default function Home() {
           Minimum 4 hours • £{RATE}/h • Pro-rata thereafter
         </p>
         <div>
-          {/* On the homepage, use hash-only link */}
-          <a
-            href="#book"
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
+          {/* Direct to booking page (fixes “stopped working”) */}
+          <Link
+            href="/booking"
+            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
           >
             Book Now
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -84,13 +85,13 @@ export default function Home() {
           </a>
           {" · "}
           Phone:{" "}
-          <a className="underline" href={`tel:${CONTACT_PHONE}`}>
-            {CONTACT_PHONE}
+          <a className="underline" href={`tel:${CONTACT_PHONE_TEL}`}>
+            {CONTACT_PHONE_DISPLAY}
           </a>
         </p>
       </section>
 
-      {/* Book anchor target */}
+      {/* Book anchor target (kept for header link /#book) */}
       <section id="book" className="py-12 bg-white text-center">
         <Link
           href="/booking"
