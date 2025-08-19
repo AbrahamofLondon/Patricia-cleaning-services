@@ -6,7 +6,7 @@ const RATE = process.env.NEXT_PUBLIC_RATE || "15";
 
 export default function Home() {
   return (
-    <div id="home">
+    <div>
       <Navbar />
 
       {/* Hero */}
@@ -19,12 +19,13 @@ export default function Home() {
           Minimum 4 hours • £{RATE}/h • Pro-rata thereafter
         </p>
         <div>
-          <Link
-            href="/#book"
+          {/* On the homepage, use hash-only link */}
+          <a
+            href="#book"
             className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
           >
             Book Now
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -72,7 +73,11 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="py-12 bg-gray-50 text-center">
         <h2 className="text-2xl font-bold mb-2">Contact</h2>
-        <p>Email: <a className="underline" href="mailto:abepokmogpa1@gmail.com">abepokmogpa1@gmail.com</a> · Phone: <a className="underline" href="tel:07377339910">07377 339910</a></p>
+        <p>
+          Email: <a className="underline" href="mailto:abepokmogpa1@gmail.com">abepokmogpa1@gmail.com</a>
+          {" · "}
+          Phone: <a className="underline" href="tel:07377339910">07377 339910</a>
+        </p>
       </section>
 
       {/* Book anchor target */}
