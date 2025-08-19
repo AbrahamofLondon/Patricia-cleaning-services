@@ -1,4 +1,4 @@
-A// pages/booking.tsx (Next.js + Tailwind)
+// pages/booking.tsx (Next.js + Tailwind)
 // Env needed in .env.local:
 // NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/mdkdvvlr
 // NEXT_PUBLIC_RATE=15
