@@ -1,3 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* smooth scroll + offset so anchors don't hide under the sticky nav */
+html, body { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 84px; }  /* tweak to your navbar height */
