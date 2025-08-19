@@ -1,10 +1,21 @@
-// pages/api/book.ts
-import type { NextApiRequest, NextApiResponse } from "next";
+// pages/_app.tsx
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import "@/styles/globals.css";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") return res.status(405).json({ ok: false });
-  const { name, email, phone, date, time, hours, service, notes, bring_supplies, total } = req.body || {};
-  // Call Resend or your SMTP here. Pseudo:
-  // await resend.emails.send({ to: process.env.BOOKINGS_TO!, subject: `Booking: ${name}`, html: ... });
-  return res.status(200).json({ ok: true });
+export default function App({ Component, pageProps }: AppProps) {
+  // NOTE: not async; no fetch/await here
+  return (
+    <>
+      <Head>
+        <title>Patricia Cleaning – On-Demand Housekeeping (Min 4h)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="On-demand housekeeping. Minimum 4 hours at a fixed hourly rate. Book online—no contracts."
+        />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
