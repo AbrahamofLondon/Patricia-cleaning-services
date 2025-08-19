@@ -4,6 +4,10 @@ import Navbar from "@/components/Navbar";
 const CAL = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMBED || "";
 const RATE = process.env.NEXT_PUBLIC_RATE || "15";
 
+// 👇 define Patricia's email + phone here (cleaner, easier to update later)
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "patricia.housekeeping@example.com";
+const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE || "07377 339910";
+
 export default function Home() {
   return (
     <div>
@@ -74,9 +78,15 @@ export default function Home() {
       <section id="contact" className="py-12 bg-gray-50 text-center">
         <h2 className="text-2xl font-bold mb-2">Contact</h2>
         <p>
-          Email: <a className="underline" href="mailto:abepokmogpa1@gmail.com">abepokmogpa1@gmail.com</a>
+          Email:{" "}
+          <a className="underline" href={`mailto:${CONTACT_EMAIL}`}>
+            {CONTACT_EMAIL}
+          </a>
           {" · "}
-          Phone: <a className="underline" href="tel:07377339910">07377 339910</a>
+          Phone:{" "}
+          <a className="underline" href={`tel:${CONTACT_PHONE}`}>
+            {CONTACT_PHONE}
+          </a>
         </p>
       </section>
 
